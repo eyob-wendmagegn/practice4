@@ -11,6 +11,8 @@ function Project1() {
     console.log("updating")
    },[])
 
+
+
   return (
     <div>
         <h1> This is Project</h1>
