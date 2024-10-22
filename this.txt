@@ -1,0 +1,27 @@
+import React, { useEffect, useRef, useState } from 'react'
+
+function Project1() {
+    //this is sample project by using useRef,useState,useEffect in the hook
+    const initialvalue=0
+    const intial=useRef(null)
+   const [counter,countupdater]= useState(initialvalue)
+   const [name,setName]=useState({FName:''})
+   useEffect(()=>{
+    intial.current.focus()
+    console.log("updating")
+   },[])
+
+  return (
+    <div>
+        <h1> This is Project</h1>
+        count:{counter} {"   "}
+        <button onClick={() => countupdater(initialvalue)}>Reset</button>
+        <button onClick={() => countupdater(counter + 1)}>Increment</button>
+        <button onClick={() => countupdater(counter - 1)}>Decrement</button> <br/> <br/>
+        <input ref={intial} type="text" value={name.FName } onChange={(e) =>setName({...name,FName:e.target.value})}/>
+        <h2>your first name is:{name.FName}</h2>
+    </div>
+  )
+}
+
+export default Project1
